@@ -15,7 +15,7 @@ def calculator(expression):
                     '/': lambda a, b: a / b
                 }[sign](left, right)
             except (ValueError, TypeError):
-                raise ValueError('Выражение содержать 2 целых числа и один знак арифметической операции')
+                raise ValueError('Выражение должно содержать 2 целых числа и один знак арифметической операции')
 
 
 if __name__ == '__main__':

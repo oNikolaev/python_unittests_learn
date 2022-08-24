@@ -23,22 +23,22 @@ class CalculatorTest(TestCase):
     def test_two_signs(self):
         with self.assertRaises(ValueError) as e:
             calculator('2+2+2')
-        self.assertEqual('Выражение содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
+        self.assertEqual('Выражение должно содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
 
     def test_many_signs(self):
         with self.assertRaises(ValueError) as e:
             calculator('2+3*10/5')
-        self.assertEqual('Выражение содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
+        self.assertEqual('Выражение должно содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
 
     def test_no_ints(self):
         with self.assertRaises(ValueError) as e:
             calculator('2.2+3.0')
-        self.assertEqual('Выражение содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
+        self.assertEqual('Выражение должно содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
 
     def test_strings(self):
         with self.assertRaises(ValueError) as e:
             calculator('a+b')
-        self.assertEqual('Выражение содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
+        self.assertEqual('Выражение должно содержать 2 целых числа и один знак арифметической операции', e.exception.args[0])
 
 
 if __name__ == '__main__':
